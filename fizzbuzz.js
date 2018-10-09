@@ -1,22 +1,26 @@
 /*! fizzbuzz v0.0.0 - MIT license */
 'use strict';
 
-var fizzbuzz = function (n) {
+var fizzbuzz = function (list) {
 
-  if(n % 3 == 0 && n % 5==0){
-    n = 0;
-  }
-  else if(n % 3 == 0){
-     n = 3;
-  }
-  else if(n % 5 == 0){
-    n = 5;
-  }
-  else if(n == null)
+  var ls = list;
+  for(var i = 0; i < ls.length; i++)
   {
-    n = 0;
+    if(ls[i] % 3 == 0 && ls[i] % 5==0){
+      ls[i] = 0;
+    }
+    else if(ls[i] % 3 == 0){
+      ls[i] = 3;
+    }
+    else if(ls[i] % 5 == 0){
+      ls[i] = 5;
+    }
+    else{
+      ls[i] = ls[i];
+    }
   }
-  return n;
+
+  return ls;
 }
 
 if ( typeof module !== "undefined" ) {
